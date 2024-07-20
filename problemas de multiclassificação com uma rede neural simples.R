@@ -10,7 +10,7 @@ library(tidyverse)
 library(neuralnet)
 
 dplyr::filter(mtcars, am & cyl == 8)
-conflict_scout()
+
 library(tidyverse)
 library(neuralnet)
 
@@ -41,7 +41,7 @@ plot(model,rep = "best")
 
 pred <- predict(model, test_data)
 labels <- c("setosa", "versicolor", "virginca")
-prediction_label <- data.frame(max.col(pred)) %>%     
+prediction_label <- data.frame(max.col(pred)) %>%
   mutate(pred=labels[max.col.pred.]) %>%
   select(2) %>%
   unlist()
@@ -50,11 +50,10 @@ table(test_data$Species, prediction_label)
 
 
 
-  
-  
+
+
   check = as.numeric(test_data$Species) == max.col(pred)
   accuracy = (sum(check)/nrow(test_data))*100
   print(accuracy)
-  
-  
-  
+
+
